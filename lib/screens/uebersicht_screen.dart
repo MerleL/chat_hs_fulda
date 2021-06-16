@@ -57,24 +57,10 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 1.0),
         child: Align(
           alignment: Alignment.bottomRight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: Container(
-                  child: Icon(
-                    Icons.language,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              Container(
-                child: Image(
-                  image: AssetImage('assets/images/Logo.png'),
-                ),
-              ),
-            ],
+          child: Container(
+            child: Image(
+              image: AssetImage('assets/images/Logo.png'),
+            ),
           ),
         ),
       ),
@@ -95,9 +81,9 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 60,
+                    width: 80,
                     child: CircleAvatar(
-                      radius: 60,
+                      radius: 80,
                       backgroundColor: Colors.black,
                       child: Image(
                         image: AssetImage('assets/images/defaultImage.png'),
@@ -105,7 +91,7 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: TextButton(
                       style: TextButton.styleFrom(
                         // damit es kein Extra-Padding hat
@@ -116,10 +102,10 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
                             builder: (context) => ProfilScreen()));
                       },
                       child: Text(
-                        'Name',
+                        'fdai1234',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 30,
                         ),
                       ),
                     ),
@@ -128,22 +114,52 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
               ),
             ),
           ),
-          buildDrawerList(context, 'Chat suchen', UebersichtScreen()),
-          buildDrawerList(context, 'Kontakt suchen', UebersichtScreen()),
-          buildDrawerList(context, 'Gruppe erstellen', UebersichtScreen()),
-          buildDrawerList(context, 'Einstellungen', SettingsScreen()),
+          buildDrawerList(
+              context,
+              'Chat suchen',
+              UebersichtScreen(),
+              Icon(
+                Icons.search,
+                color: Color.fromARGB(255, 78, 90, 92),
+              )),
+          buildDrawerList(
+              context,
+              'Kontakt suchen',
+              UebersichtScreen(),
+              Icon(
+                Icons.search,
+                color: Color.fromARGB(255, 78, 90, 92),
+              )),
+          buildDrawerList(
+              context,
+              'Gruppe erstellen',
+              UebersichtScreen(),
+              Icon(
+                Icons.add,
+                color: Color.fromARGB(255, 78, 90, 92),
+              )),
+          buildDrawerList(
+              context,
+              'Einstellungen',
+              SettingsScreen(),
+              Icon(
+                Icons.settings,
+                color: Color.fromARGB(255, 78, 90, 92),
+              )),
         ],
       ),
     );
   }
 
-  Widget buildDrawerList(BuildContext context, String text, screen) {
+  Widget buildDrawerList(
+      BuildContext context, String text, screen, Widget icon) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Container(
         color: Color.fromARGB(200, 240, 240, 240),
         child: ListTile(
           title: Text(text),
+          leading: icon,
           onTap: () {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => screen));

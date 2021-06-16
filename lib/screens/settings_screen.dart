@@ -44,27 +44,67 @@ class SettingsScreen extends StatelessWidget {
 
   Widget buildSettings(BuildContext context) {
     return Expanded(
-      child: ListView(
-        children: [
-          buildListTile(context, 'Profil', Icon(Icons.account_circle_rounded)),
-          buildListTile(
-              context, 'Benachrichtigungen', FaIcon(FontAwesomeIcons.bell)),
-          buildListTile(context, 'Datenschutz', Icon(Icons.lock)),
-          buildListTile(context, 'Chats', Icon(Icons.speaker_notes)),
-          buildListTile(context, 'Sprache', Icon(Icons.language)),
-          buildListTile(context, 'Hilfe', Icon(Icons.help)),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        child: Column(
+          children: [
+            buildListTile(
+                context,
+                'Profil',
+                Icon(
+                  Icons.account_circle_rounded,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildListTile(
+                context,
+                'Benachrichtigungen',
+                FaIcon(
+                  FontAwesomeIcons.bell,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildListTile(
+                context,
+                'Datenschutz',
+                Icon(
+                  Icons.lock,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildListTile(
+                context,
+                'Chats',
+                Icon(
+                  Icons.speaker_notes,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildListTile(
+                context,
+                'Sprache',
+                Icon(
+                  Icons.language,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildListTile(
+                context,
+                'Hilfe',
+                Icon(
+                  Icons.help,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+          ],
+        ),
       ),
     );
   }
 
   Widget buildListTile(BuildContext context, String text, Widget icon) {
-    return ListTile(
-      title: Text(
-        text,
-        style: Theme.of(context).textTheme.bodyText1,
+    return Card(
+      child: ListTile(
+        title: Text(
+          text,
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        leading: icon,
       ),
-      leading: icon,
     );
   }
 

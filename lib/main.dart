@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CH@',
       theme: ThemeData(
-        // Icons:
         primaryColor: Color.fromARGB(255, 0, 0, 0),
         accentColor: Color.fromARGB(255, 220, 220, 220),
         fontFamily: 'TheSansOffice',
@@ -23,11 +22,6 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Color.fromARGB(255, 102, 197, 48),
         ),
-        /*
-        iconTheme: IconThemeData(
-          color: Color.fromARGB(255, 78, 90, 92)
-        ),
-         */
         textTheme: TextTheme(
           // schwarzer Text
           bodyText1: TextStyle(

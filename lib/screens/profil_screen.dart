@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ToDo: Loesung fuer lange Namen/Staden
@@ -26,28 +27,21 @@ class ProfilScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Align(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Align(
+                alignment: Alignment.center,
                 child: Container(
-                  width: double.infinity,
-                  height: 130,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(200, 240, 240, 240),
-                    border: Border.all(
-                      color: Color.fromARGB(255, 200, 200, 200),
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(4.0),
-                    ),
-                  ),
+                  width: 140,
+                  height: 140,
+                  //color: Colors.amber,
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: CircleAvatar(
-                      radius: 100,
+                      radius: 140,
                       backgroundColor: Colors.black,
                       child: Image(
                         image: AssetImage('assets/images/defaultImage.png'),
@@ -56,37 +50,78 @@ class ProfilScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              buildList(context, 'Name:', 'Mein Name'),
-              buildList(context, 'FD Nummer:', 'Meine FD Nummer'),
-              buildList(context, 'Handynummer:', '0123456789'),
-              buildList(context, 'Status:', 'suche Lerngruppe'),
-            ],
-          ),
+            ),
+            buildList(
+                context,
+                'Name:',
+                'Mein Name',
+                Icon(
+                  Icons.person,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildList(
+                context,
+                'FD Nummer:',
+                'fdai1234',
+                Icon(
+                  Icons.vpn_key,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildList(
+                context,
+                'Handynummer:',
+                '0123456789',
+                Icon(
+                  Icons.phone,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+            buildList(
+                context,
+                'Status:',
+                'suche Lerngruppe',
+                Icon(
+                  Icons.info,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                )),
+          ],
         ),
       ),
     );
   }
 
-  Widget buildList(BuildContext context, String about, String mine) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30.0, 8.0, 8.0, 15.0),
-            child: Text(
-              about,
-              style: Theme.of(context).textTheme.bodyText1,
+  Widget buildList(BuildContext context, String given, String get, icon) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+      child: Container(
+        width: double.infinity,
+        color: Color.fromARGB(200, 240, 240, 240),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0),
+              child: Row(
+                children: [
+                  icon,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      given,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 8.0, 30.0, 15.0),
-            child: Text(
-              mine,
-              style: Theme.of(context).textTheme.bodyText1,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15.0),
+              child: Text(
+                get,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

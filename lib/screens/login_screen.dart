@@ -42,24 +42,10 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 1.0),
           child: Align(
             alignment: Alignment.bottomRight,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 15.0),
-                  child: Container(
-                    child: Icon(
-                      Icons.language,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Image(
-                    image: AssetImage('assets/images/Logo.png'),
-                  ),
-                ),
-              ],
+            child: Container(
+              child: Image(
+                image: AssetImage('assets/images/Logo.png'),
+              ),
             ),
           ),
         ),
@@ -132,26 +118,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   buildTextField(context, 'FD Nummer', false),
                   buildTextField(context, 'Kennwort', true),
                   buildLoginBtn(context),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 15.0),
-                    child: Row(
-                      children: [
-                        Text('FD Nummer merken',
-                            style: Theme.of(context).textTheme.bodyText1),
-                        /*
-                        Checkbox(
-                            checkColor: Colors.white,
-                            activeColor: Color.fromARGB(255, 78, 90, 92),
-                            value: saveFD,
-                            onChanged: (bool value) {
-                              setState(() {
-                                saveFD = value;
-                              });
-                            }),
-                         */
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),
