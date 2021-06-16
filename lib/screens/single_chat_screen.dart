@@ -95,10 +95,8 @@ class _SingleChatScreenState extends State<SingleChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        // entfernt den Zurueck-Pfeil
         flexibleSpace: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 1.0),
+          padding: const EdgeInsets.fromLTRB(40.0, 1.0, 15.0, 1.0),
           child: Container(
             alignment: Alignment.bottomLeft,
             child: SingleChildScrollView(

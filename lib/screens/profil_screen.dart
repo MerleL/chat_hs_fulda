@@ -27,63 +27,78 @@ class ProfilScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
-                  width: 140,
-                  height: 140,
-                  //color: Colors.amber,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: CircleAvatar(
-                      radius: 140,
-                      backgroundColor: Colors.black,
-                      child: Image(
-                        image: AssetImage('assets/images/defaultImage.png'),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 10.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    width: 140,
+                    height: 140,
+                    //color: Colors.green,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: CircleAvatar(
+                        radius: 140,
+                        backgroundColor: Colors.black,
+                        child: Image(
+                          image: AssetImage('assets/images/defaultImage.png'),
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            buildList(
+              buildList(
                 context,
                 'Name:',
                 'Mein Name',
                 Icon(
                   Icons.person,
                   color: Color.fromARGB(255, 78, 90, 92),
-                )),
-            buildList(
+                ),
+              ),
+              buildList(
                 context,
                 'FD Nummer:',
                 'fdai1234',
                 Icon(
                   Icons.vpn_key,
                   color: Color.fromARGB(255, 78, 90, 92),
-                )),
-            buildList(
+                ),
+              ),
+              buildList(
                 context,
                 'Handynummer:',
                 '0123456789',
                 Icon(
                   Icons.phone,
                   color: Color.fromARGB(255, 78, 90, 92),
-                )),
-            buildList(
+                ),
+              ),
+              buildList(
                 context,
                 'Status:',
                 'suche Lerngruppe',
                 Icon(
                   Icons.info,
                   color: Color.fromARGB(255, 78, 90, 92),
-                )),
-          ],
+                ),
+              ),
+              buildList(
+                context,
+                'zuletzt online',
+                'für jeden sichtbar',
+                Icon(
+                  Icons.remove_red_eye,
+                  color: Color.fromARGB(255, 78, 90, 92),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -95,32 +110,35 @@ class ProfilScreen extends StatelessWidget {
       child: Container(
         width: double.infinity,
         color: Color.fromARGB(200, 240, 240, 240),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Row(
-                children: [
-                  icon,
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      given,
-                      style: Theme.of(context).textTheme.bodyText2,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Row(
+                  children: [
+                    icon,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        given,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15.0),
-              child: Text(
-                get,
-                style: Theme.of(context).textTheme.bodyText1,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Text(
+                  get,
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
