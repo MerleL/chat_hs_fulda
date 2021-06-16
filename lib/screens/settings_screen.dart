@@ -1,3 +1,6 @@
+import 'package:chat_hs_fulda/screens/benachrichtigungen_screen.dart';
+import 'package:chat_hs_fulda/screens/datenschutz_screen.dart';
+import 'package:chat_hs_fulda/screens/hilfe_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -49,54 +52,79 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           children: [
             buildListTile(
-                context,
-                'Profil',
-                Icon(
-                  Icons.account_circle_rounded,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Profil',
+              Icon(
+                Icons.account_circle_rounded,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              SettingsScreen(),
+            ),
             buildListTile(
-                context,
-                'Benachrichtigungen',
-                FaIcon(
-                  FontAwesomeIcons.bell,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Benachrichtigungen',
+              FaIcon(
+                FontAwesomeIcons.bell,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              BenachrichtigungenScreen(),
+            ),
             buildListTile(
-                context,
-                'Datenschutz',
-                Icon(
-                  Icons.lock,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Datenschutz',
+              Icon(
+                Icons.lock,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              DatenschutzScreen(),
+            ),
             buildListTile(
-                context,
-                'Chats',
-                Icon(
-                  Icons.speaker_notes,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Daten und Speicher',
+              Icon(
+                Icons.data_usage,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              SettingsScreen(),
+            ),
             buildListTile(
-                context,
-                'Sprache',
-                Icon(
-                  Icons.language,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Chats',
+              Icon(
+                Icons.speaker_notes,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              SettingsScreen(),
+            ),
             buildListTile(
-                context,
-                'Hilfe',
-                Icon(
-                  Icons.help,
-                  color: Color.fromARGB(255, 78, 90, 92),
-                )),
+              context,
+              'Sprache',
+              Icon(
+                Icons.language,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              SettingsScreen(),
+            ),
+            buildListTile(
+              context,
+              'Hilfe',
+              Icon(
+                Icons.help,
+                color: Color.fromARGB(255, 78, 90, 92),
+              ),
+              HilfeScreen(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text('Einstellungen zurücksetzen'),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget buildListTile(BuildContext context, String text, Widget icon) {
+  Widget buildListTile(BuildContext context, String text, Widget icon, screen) {
     return Card(
       child: ListTile(
         title: Text(
@@ -104,6 +132,10 @@ class SettingsScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyText1,
         ),
         leading: icon,
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => screen));
+        },
       ),
     );
   }
