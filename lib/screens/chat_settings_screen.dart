@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ChatSettingsScreen extends StatelessWidget {
   const ChatSettingsScreen({Key? key}) : super(key: key);
 
+  //bool val = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,33 +16,32 @@ class ChatSettingsScreen extends StatelessWidget {
             child: Column(
               children: [
                 buildHeader(context),
+                /*buildListTile(
+                  context,
+                  'Theme',
+                  Switch(value: val, onChanged: (changed){
+
+                  }),
+                ),*/
                 buildListTile(
                   context,
-                  'blockierte Nutzer',
+                  'Hintergrundbild ändern',
                   Icon(
-                    Icons.check_box,
+                    Icons.wallpaper,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
                 ),
                 buildListTile(
                   context,
-                  'Login-Namen speichern',
-                  Icon(
-                    Icons.check_box,
-                    color: Color.fromARGB(255, 78, 90, 92),
+                  'Schriftgröße',
+                  Text(
+                    'Klein',
+                    style: TextStyle(color: Colors.grey),
                   ),
                 ),
                 buildListTile(
                   context,
-                  'aktive Sitzungen',
-                  Icon(
-                    Icons.check_box,
-                    color: Color.fromARGB(255, 78, 90, 92),
-                  ),
-                ),
-                buildListTile(
-                  context,
-                  'Lesebestätigungen',
+                  'Chat speichern',
                   Icon(
                     Icons.check_box,
                     color: Color.fromARGB(255, 78, 90, 92),
@@ -65,7 +66,7 @@ Widget buildHeader(BuildContext context) {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Datenschutz',
+          'Chats',
           style: Theme.of(context).textTheme.headline2,
         ),
       ),

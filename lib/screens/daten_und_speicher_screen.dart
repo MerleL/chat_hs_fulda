@@ -16,31 +16,23 @@ class DatenUndSpeicherScreen extends StatelessWidget {
                 buildHeader(context),
                 buildListTile(
                   context,
-                  'blockierte Nutzer',
+                  'Daten verwalten',
                   Icon(
-                    Icons.check_box,
+                    Icons.folder,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
                 ),
                 buildListTile(
                   context,
-                  'Login-Namen speichern',
+                  'Netzwerknutzung',
                   Icon(
-                    Icons.check_box,
+                    Icons.cloud_circle,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
                 ),
                 buildListTile(
                   context,
-                  'aktive Sitzungen',
-                  Icon(
-                    Icons.check_box,
-                    color: Color.fromARGB(255, 78, 90, 92),
-                  ),
-                ),
-                buildListTile(
-                  context,
-                  'Lesebestätigungen',
+                  'Medien automatisch downloaden',
                   Icon(
                     Icons.check_box,
                     color: Color.fromARGB(255, 78, 90, 92),
@@ -65,7 +57,7 @@ Widget buildHeader(BuildContext context) {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Datenschutz',
+          'Daten und Speicher',
           style: Theme.of(context).textTheme.headline2,
         ),
       ),

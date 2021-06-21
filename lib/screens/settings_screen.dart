@@ -7,6 +7,8 @@ import 'package:chat_hs_fulda/screens/sprache_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'profil_screen.dart';
+
 // ToDo: Unterseiten verlinken
 
 class SettingsScreen extends StatelessWidget {
@@ -61,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                 Icons.account_circle_rounded,
                 color: Color.fromARGB(255, 78, 90, 92),
               ),
-              SettingsScreen(),
+              ProfilScreen(),
             ),
             buildListTile(
               context,

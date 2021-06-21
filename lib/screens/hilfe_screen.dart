@@ -65,7 +65,7 @@ Widget buildHeader(BuildContext context) {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Datenschutz',
+          'Hilfe',
           style: Theme.of(context).textTheme.headline2,
         ),
       ),

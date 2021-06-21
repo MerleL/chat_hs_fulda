@@ -16,7 +16,7 @@ class SpracheScreen extends StatelessWidget {
                 buildHeader(context),
                 buildListTile(
                   context,
-                  'blockierte Nutzer',
+                  'Deutsch',
                   Icon(
                     Icons.check_box,
                     color: Color.fromARGB(255, 78, 90, 92),
@@ -24,25 +24,9 @@ class SpracheScreen extends StatelessWidget {
                 ),
                 buildListTile(
                   context,
-                  'Login-Namen speichern',
+                  'Englisch',
                   Icon(
-                    Icons.check_box,
-                    color: Color.fromARGB(255, 78, 90, 92),
-                  ),
-                ),
-                buildListTile(
-                  context,
-                  'aktive Sitzungen',
-                  Icon(
-                    Icons.check_box,
-                    color: Color.fromARGB(255, 78, 90, 92),
-                  ),
-                ),
-                buildListTile(
-                  context,
-                  'Lesebestätigungen',
-                  Icon(
-                    Icons.check_box,
+                    Icons.check_box_outline_blank,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
                 ),
@@ -65,7 +49,7 @@ Widget buildHeader(BuildContext context) {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Datenschutz',
+          'Sprache',
           style: Theme.of(context).textTheme.headline2,
         ),
       ),
