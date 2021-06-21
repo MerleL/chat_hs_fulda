@@ -1,6 +1,9 @@
 import 'package:chat_hs_fulda/screens/benachrichtigungen_screen.dart';
+import 'package:chat_hs_fulda/screens/chat_settings_screen.dart';
+import 'package:chat_hs_fulda/screens/daten_und_speicher_screen.dart';
 import 'package:chat_hs_fulda/screens/datenschutz_screen.dart';
 import 'package:chat_hs_fulda/screens/hilfe_screen.dart';
+import 'package:chat_hs_fulda/screens/sprache_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -85,7 +88,7 @@ class SettingsScreen extends StatelessWidget {
                 Icons.data_usage,
                 color: Color.fromARGB(255, 78, 90, 92),
               ),
-              SettingsScreen(),
+              DatenUndSpeicherScreen(),
             ),
             buildListTile(
               context,
@@ -94,7 +97,7 @@ class SettingsScreen extends StatelessWidget {
                 Icons.speaker_notes,
                 color: Color.fromARGB(255, 78, 90, 92),
               ),
-              SettingsScreen(),
+              ChatSettingsScreen(),
             ),
             buildListTile(
               context,
@@ -103,7 +106,7 @@ class SettingsScreen extends StatelessWidget {
                 Icons.language,
                 color: Color.fromARGB(255, 78, 90, 92),
               ),
-              SettingsScreen(),
+              SpracheScreen(),
             ),
             buildListTile(
               context,
