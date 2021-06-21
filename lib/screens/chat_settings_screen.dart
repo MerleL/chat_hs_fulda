@@ -34,9 +34,9 @@ class ChatSettingsScreen extends StatelessWidget {
                 buildListTile(
                   context,
                   'Schriftgröße',
-                  Text(
-                    'Klein',
-                    style: TextStyle(color: Colors.grey),
+                  Icon(
+                    Icons.text_fields,
+                    color: Color.fromARGB(255, 78, 90, 92),
                   ),
                 ),
                 buildListTile(
@@ -74,6 +74,7 @@ Widget buildHeader(BuildContext context) {
   );
 }
 
+//Eventuell Struktur anpassen!
 Widget buildListTile(BuildContext context, String text, Widget icon) {
   return Card(
     child: ListTile(
