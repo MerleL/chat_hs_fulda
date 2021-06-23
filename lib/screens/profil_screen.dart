@@ -109,7 +109,12 @@ class ProfilScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
       child: Container(
         width: double.infinity,
-        color: Color.fromARGB(200, 240, 240, 240),
+        decoration: BoxDecoration(
+          color: Color.fromARGB(200, 240, 240, 240),
+          borderRadius: BorderRadius.all(
+            Radius.circular(4.0),
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
