@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:emoji_picker/emoji_picker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 //import 'package:http/http.dart';
 //import 'package:giphy_picker/giphy_picker.dart';
 
@@ -28,6 +29,7 @@ class ViewMessage {
 
   ViewMessage(this.phonenr, this.text, this.time);
 }
+
 class _SingleChatScreenState extends State<SingleChatScreen> {
   /* YT
   Future getMessages() async {
@@ -70,6 +72,7 @@ class _SingleChatScreenState extends State<SingleChatScreen> {
     ViewMessage('0987654321',
         'Deine sechste Nachricht an mich ist bla bla bla bla bla bla', '12:00'),
   ];
+
   Object get mynr => '0123456789';
 
   late bool isShowEmoji;
@@ -109,10 +112,7 @@ class _SingleChatScreenState extends State<SingleChatScreen> {
                     padding: const EdgeInsets.only(left: 5.0),
                     child: Text(
                       'ChatName',
-                      style: TextStyle(
-                        fontSize: 23,
-                        color: Colors.white,
-                      ),
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                   ),
                 ],
@@ -213,7 +213,7 @@ class _SingleChatScreenState extends State<SingleChatScreen> {
             alignment: align,
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(vertical: 3.0, horizontal: 10.0),
+                  const EdgeInsets.symmetric(vertical: 3.0, horizontal: 10.0),
               child: Container(
                 width: MediaQuery.of(context).size.width * (4 / 5),
                 // 4/5 der Screen-Breite
@@ -226,7 +226,8 @@ class _SingleChatScreenState extends State<SingleChatScreen> {
                         alignment: Alignment.topLeft,
                         child: Text(
                           messages[index].text,
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.headline4,
+
                         ),
                       ),
                       Align(

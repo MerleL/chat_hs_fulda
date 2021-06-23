@@ -17,6 +17,13 @@ class ProfilScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
+                    width: MediaQuery.of(context).size.width * 0.50 - 40,
+                    // die Hälfte des Screens - die Breite des Logos
+                    child: Text(
+                      'Profil',
+                      style: Theme.of(context).textTheme.headline1,
+                    )),
+                Container(
                   child: Image(
                     image: AssetImage('assets/images/Logo.png'),
                   ),
