@@ -60,7 +60,7 @@ class DatenUndSpeicherScreen extends StatelessWidget {
                           ),
                           buildListTile(
                             context,
-                            'Bei einer WLAN-Verbindung',
+                            'Bei WLAN-Verbindung',
                             Icon(
                               Icons.check_box,
                               color: Color.fromARGB(255, 78, 90, 92),
@@ -68,7 +68,7 @@ class DatenUndSpeicherScreen extends StatelessWidget {
                           ),
                           buildListTile(
                             context,
-                            'Beim Roaming',
+                            'Bei Roaming',
                             Icon(
                               Icons.check_box,
                               color: Color.fromARGB(255, 78, 90, 92),

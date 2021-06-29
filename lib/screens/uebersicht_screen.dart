@@ -82,12 +82,18 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
                 children: [
                   Container(
                     width: 80,
-                    child: CircleAvatar(
-                      radius: 80,
-                      backgroundColor: Colors.black,
-                      child: Image(
-                        image: AssetImage('assets/images/defaultImage.png'),
+                    child: GestureDetector(
+                      child: CircleAvatar(
+                        radius: 80,
+                        backgroundColor: Colors.black,
+                        child: Image(
+                          image: AssetImage('assets/images/defaultImage.png'),
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ProfilScreen()));
+                      },
                     ),
                   ),
                   Padding(
