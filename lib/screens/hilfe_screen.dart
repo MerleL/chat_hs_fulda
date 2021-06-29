@@ -1,3 +1,4 @@
+import 'package:chat_hs_fulda/screens/support_formular_screen.dart';
 import 'package:flutter/material.dart';
 
 class HilfeScreen extends StatelessWidget {
@@ -21,6 +22,7 @@ class HilfeScreen extends StatelessWidget {
                     Icons.support_agent,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
+                  SupportFormularScreen(),
                 ),
                 buildListTile(
                   context,
@@ -29,6 +31,7 @@ class HilfeScreen extends StatelessWidget {
                     Icons.lightbulb,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
+                  HilfeScreen(),
                 ),
                 buildListTile(
                   context,
@@ -37,6 +40,7 @@ class HilfeScreen extends StatelessWidget {
                     Icons.lock,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
+                  HilfeScreen(),
                 ),
                 buildListTile(
                   context,
@@ -45,6 +49,7 @@ class HilfeScreen extends StatelessWidget {
                     Icons.phone_android,
                     color: Color.fromARGB(255, 78, 90, 92),
                   ),
+                  HilfeScreen(),
                 ),
               ],
             ),
@@ -73,7 +78,7 @@ Widget buildHeader(BuildContext context) {
   );
 }
 
-Widget buildListTile(BuildContext context, String text, Widget icon) {
+Widget buildListTile(BuildContext context, String text, Widget icon, screen) {
   return Card(
     child: ListTile(
       title: Text(
@@ -81,6 +86,10 @@ Widget buildListTile(BuildContext context, String text, Widget icon) {
         style: Theme.of(context).textTheme.bodyText1,
       ),
       leading: icon,
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => screen));
+      },
     ),
   );
 }
